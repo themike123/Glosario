@@ -30,11 +30,6 @@ app.controller('glosarioController', function($scope, $http){
   getDefiniciones();
   /* Método para obtener la lista de usuario */
 
-  if ($scope.definiciones.length == 0) {
-    $("#avisos").empty();
-    $("#avisos").append('<div class="card-panel"><span class="blue-text text-darken-2">No hay Términos</span></div>');
-  }
-
   function getDefiniciones() {
       $http.get(url_server+'definicion/listar').success(function(response){
           if(response.type) {
